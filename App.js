@@ -23,16 +23,32 @@ export default function App() {
       >
         <TextInput style={styles.input} placeholder={' Number'}></TextInput>
         <Picker style={styles.piker}
-
+          selectedValue={value}
           onValueChange={(itemValue, itemIndex) =>
             setValue(itemValue)
           }>
           <Picker.Item label="Kilometer" value="kilometer" />
           <Picker.Item label="Meter" value="meter" />
           <Picker.Item label="Sentimeter" value="sentimer" />
+          <Picker.Item label="Millimetre" value="millimetre" />
+          <Picker.Item label="Foot" value="foot" />
+          <Picker.Item label="Inch" value="inch" />
+        </Picker>
+        <TextInput style={styles.input} placeholder={' Number'}></TextInput>
+        <Picker style={styles.piker}
+          selectedValue={value}
+          onValueChange={(itemValue, itemIndex) =>
+            setValue(itemValue)
+          }>
+          <Picker.Item label="Kilometer" value="kilometer" />
+          <Picker.Item label="Meter" value="meter" />
+          <Picker.Item label="Sentimeter" value="sentimer" />
+          <Picker.Item label="Millimetre" value="millimetre" />
+          <Picker.Item label="Foot" value="foot" />
+          <Picker.Item label="Inch" value="inch" />
         </Picker>
         <TouchableOpacity >
-          <View>{value}</View>
+          <View style={styles.resultView}>{value}</View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -91,7 +107,11 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderColor: '#C0C0C0',
 
+  },
 
+  resultView: {
+    fontSize: 24,
+    fontWeight: "700"
   }
 
 
